@@ -33,23 +33,79 @@
 
             <fieldset>
                 <legend>Identificação:</legend>
+                
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" value="" placeholder="ex: Laércio">
+                <input type="text" name="nome" value="" id="nome" placeholder="ex: Laércio">
                 
                 <label for="apelido">Apelido</label>
-                <input type="text" name="apelido" value="" placeholder="ex: Santos">
+                <input type="text" name="apelido" value="" id="apelido" placeholder="ex: Santos">
 
                 <label for="email">Email</label>
-                <input type="email" name="email" value="" placeholder="a...@...">
+                <input type="email" name="email" value="" id="email" placeholder="a...@...">
             </fieldset>
 
             <fieldset>
-                <legend></legend>
+                <legend>City Quizz <i>(boring and extended version XD)</i></legend>
+
+                <p>Relax, only to keep you here. Let me know you betterrr, like with three "r's"</p>
+                
+                    
+                <!--foward fill some background with the colour--> 
+                <!--In future, when selected, show a incentive message-->
+                <p>
+                    <label for="color">I'm a DEV, and we all have the same fav. colour, what is yours?</label>
+                    <input type="color" name="color" value="" id="color">
+                </p>    
+
+                <label for="info">Which type of vihicles you wish to drive in L.A?</label>
+                <p>
+                    Plane:<input type="checkbox" name="info" value="" id="info">
+                    Car:<input type="checkbox" name="info" value="" id="info">
+                    Motocicle:<input type="checkbox" name="info" value="" id="info">
+                    Bike:<input type="checkbox" name="info" value="" id="info">
+                    Boat:<input type="checkbox" name="info" value="" id="info">
+                </p>
+
+
+                <p>
+                    <label for="date">When are you filling this?</label>
+                    Date: <input type= "date" name="date" id="date" value="">
+                    Time: <input type="time" name="date" id="time" value="">
+                </p>
+
+                <label for="played">Do you ever played GTA?</label>
+                <p>- What a question!<input type="radio" name="played" id="played" value="100"></p>
+                <p>- Yes, of course!<input type="radio" name="played" id="played" value="70"></p>
+                <p>- I only saw it!<input type="radio" name="played" id="played" value="50"></p>
+                <p>- No, but I'll try!<input type="radio" name="played" id="played" value="30"></p>
+                
+                <p>
+                    <label for="range">Do you knew about L.A.?</label>
+                    <input type="range" min="0" max="10" step="5" value="5" name="range">
+                </p>
+
+                <p>
+                    <label for="nickname">Everyone there as a nickname, type yours:</label>
+                    <input type="text" value="" id="nickname" name="nickname" placeholder="eg: Perrito" autocomplete="nickname" autofocus required>
+                </p>
+
+                <p>
+                    <label for="opinion">One word to describe L.A. based in your knowledge: </label>
+                    <input type="text" id="opinion" name="opinion" value="" placeholder="max 10 characters" maxlength="10" size="15" required>
+                </p>    
+
+                
+                <label for="hardSubmit"><strong>Choose the right L.A. city picture to <em>"submit"</em> or the wrong to <em>"reset"</em> the form</strong></label>
+                <p>  
+                    <input type="image" name="hardSubmit" id="hardSubmit" src="images/LA_Griffith_Observatory_pequena.jpeg" alt="Submit" value="Submit">
+                    <input type="image" name="hardSubmit" id= "hardSubmit" src="images/Long Beach Skyline_small.jpeg" alt="Reset" value="Reset"  onclick="this.form.reset(); return false;">
+                </p>
+
+                <label for="submit">Or just reset/submit like a norm</label>
+                <input type="submit">
+                <input type="reset">
 
             </fieldset>
-
-
-
 
         </form>
 
