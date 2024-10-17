@@ -4,46 +4,51 @@
     box-sizing: border-box;
 }
 
+header, article {
+    /* centrando o texto */
+    display: flex;
+
+}
+  
 header {
-  /* centrando o texto */
-  display: flex;
+  
   position: sticky;
-  height: 10vh;
-  width: 100%;
+  height: 3vh;
   top: 0;
 
   border-radius: 10px;
-  padding: 10px;
-  
+  border-style: solid;
+  background-color:rgb(237, 230, 230);
+  border-color: rgb(237, 230, 230);
+  padding: 3vh;
+
   justify-content: space-between;
   align-items: center;
 
-  background-color:rgb(237, 230, 230);
-  z-index: 1;
-  
 }
-  
+
 nav > a {
 
   text-decoration: none;
   transform: none;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 1vw;
+  border-radius: 1vh;
 }
 
 nav > a:last-child {
   
-  border-radius: 10px;
+  border-color:  rgb(189, 189, 189);
+  border-radius: 1vh;
   background-color: rgb(189, 189, 189);
   
 }
 
 nav > a:link {
-  color: rgb(61, 106, 101)
+  color: rgba(61, 106, 101, 0.695)
 }
 
 nav > a:visited {
-  color: rgb(170, 170, 170)
+  color: rgb(88, 153, 145)
 }
 
 nav > a:hover {
@@ -55,28 +60,32 @@ nav > a:hover {
 nav > a:active {
   background-color: salmon;
 }
+
+  
+  
+
+
+  
+
   
 #poema {
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgb(71, 172, 172);
+  height: 100vh;
+  width: 100vw;
   flex-direction: column;
 
-  height: 100vh;
-  width: 100%;
-  
+  justify-content: center;
+  align-items: center;
   font-family: sans-serif;
-  background-color: rgb(71, 172, 172);
 
 }
 
 #poema :first-child {
-
+  
   white-space: pre-line;
   font-weight: bold;
-  margin-bottom: 14px;
-
+  margin-bottom: 2vh;
 }
 
 #poema :last-child {
@@ -91,8 +100,9 @@ nav > a:active {
   background-position: center;
 
 
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  
 
 }
 
@@ -110,17 +120,24 @@ nav > a:active {
 }
 
 #capitais {
-  
-  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  
 
-  background-color: rgba(128, 128, 128, 0.542);
-
+  background-color: bisque;
+  flex-wrap: wrap;
+  gap: 4vw;
   margin-bottom: 0;
+
+  width: 100vw;
+  height: 100vh;
   
+}
+
+#capitais > section {
+
+  display: flex;
+  
+
 }
 
 #capitais > section > * {
@@ -129,16 +146,6 @@ nav > a:active {
   height: 80px;
 
 }
-
-#capitais > section {
-
-  display: flex;
-  border-radius: 0px 20px 0px 20px;
-  
-
-}
-
-
 
 #capitais > section > p {
   background-color: white;
