@@ -20,6 +20,8 @@ header {
 
   background-color:rgb(237, 230, 230);
   z-index: 1;
+
+  font-family: Verdana, sans-serif;
   
 }
   
@@ -43,7 +45,7 @@ nav > a:link {
 }
 
 nav > a:visited {
-  color: rgb(170, 170, 170)
+  color: rgb(166, 155, 155)
 }
 
 nav > a:hover {
@@ -114,37 +116,75 @@ nav > a:active {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 10vw;
 
   background-color: rgba(128, 128, 128, 0.542);
-
-  margin-bottom: 0;
   
 }
 
-#capitais > section > * {
+#capitais figure {
+
+  display: flex;  
+  margin: 10px;
+  
+}
+
+#capitais img {
 
   width: 80px;
   height: 80px;
+  border-radius: 20px 0px 0px 20px;
 
 }
 
-#capitais > section {
 
+
+#capitais figcaption {
   display: flex;
-  border-radius: 0px 20px 0px 20px;
+  align-items: center;
+  justify-content: center;
   
+  
+  background-color: rgb(255, 255, 255);
+  height: 80px;
+  width: 80px;
+  border-radius: 0px 20px 20px 0px;
+  
+  font-style: italic;
+  font-family: Verdana, sans-serif;
+  font-size: 82%;
 
 }
 
 
+#experimenta {
 
-#capitais > section > p {
-  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+
 }
- 
 
+#experimenta p {
 
+  background-color: aqua;
+  padding: 20px;
+  border: 80px;
+  border-style:solid;
+  border-color: black;
+  border-radius: 50%; 
+
+}
   
+#experimenta :hover {
+  display: none;
+}
+
 
