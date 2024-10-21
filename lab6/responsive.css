@@ -62,19 +62,17 @@
     }
     
     .navegacao {
-        float: left;
-        overflow: hidden;
+        
+        height: 50px;
+        position: relative;
+        background-color: rgba(31, 109, 105, 0.452);
+        
     }
 
-    .navegacao .dropbtn {
-        font-size: 10px;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
+    .dropbtn {
+        position: absolute;
+        background-color: white;
+        g
     }
 
     nav a:hover, .navegacao:hover .dropbtn {
