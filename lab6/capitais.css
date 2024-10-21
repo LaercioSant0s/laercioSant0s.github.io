@@ -4,51 +4,48 @@
     box-sizing: border-box;
 }
 
-header, article {
-    /* centrando o texto */
-    display: flex;
-
-}
-  
 header {
-  
+  /* centrando o texto */
+  display: flex;
   position: sticky;
-  height: 3vh;
+  height: 10vh;
+  width: 100%;
   top: 0;
 
   border-radius: 10px;
-  border-style: solid;
-  background-color:rgb(237, 230, 230);
-  border-color: rgb(237, 230, 230);
-  padding: 3vh;
-
+  padding: 10px;
+  
   justify-content: space-between;
   align-items: center;
 
-}
+  background-color:rgb(237, 230, 230);
+  z-index: 1;
 
+  font-family: Verdana, sans-serif;
+  
+}
+  
 nav > a {
 
   text-decoration: none;
   transform: none;
-  padding: 1vw;
-  border-radius: 1vh;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 nav > a:last-child {
   
-  border-color:  rgb(189, 189, 189);
-  border-radius: 1vh;
+  border-radius: 10px;
   background-color: rgb(189, 189, 189);
   
 }
 
 nav > a:link {
-  color: rgba(61, 106, 101, 0.695)
+  color: rgb(61, 106, 101)
 }
 
 nav > a:visited {
-  color: rgb(88, 153, 145)
+  color: rgb(166, 155, 155)
 }
 
 nav > a:hover {
@@ -60,32 +57,28 @@ nav > a:hover {
 nav > a:active {
   background-color: salmon;
 }
-
-  
-  
-
-
-  
-
   
 #poema {
 
-  background-color: rgb(71, 172, 172);
-  height: 100vh;
-  width: 100vw;
-  flex-direction: column;
-
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100%;
+  
   font-family: sans-serif;
+  background-color: rgb(71, 172, 172);
 
 }
 
 #poema :first-child {
-  
+
   white-space: pre-line;
   font-weight: bold;
-  margin-bottom: 2vh;
+  margin-bottom: 14px;
+
 }
 
 #poema :last-child {
@@ -100,9 +93,8 @@ nav > a:active {
   background-position: center;
 
 
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  
 
 }
 
@@ -120,38 +112,79 @@ nav > a:active {
 }
 
 #capitais {
-  display: flex;
-  flex-direction: column;
-
-  background-color: bisque;
-  flex-wrap: wrap;
-  gap: 4vw;
-  margin-bottom: 0;
-
-  width: 100vw;
+  
   height: 100vh;
-  
-}
-
-#capitais > section {
-
   display: flex;
-  
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 
+  padding: 10vw;
+
+  background-color: rgba(128, 128, 128, 0.542);
+  
 }
 
-#capitais > section > * {
+#capitais figure {
+
+  display: flex;  
+  margin: 10px;
+  
+}
+
+#capitais img {
 
   width: 80px;
   height: 80px;
+  border-radius: 20px 0px 0px 20px;
 
 }
 
-#capitais > section > p {
-  background-color: white;
-}
- 
 
 
+#capitais figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+  
+  background-color: rgb(255, 255, 255);
+  height: 80px;
+  width: 80px;
+  border-radius: 0px 20px 20px 0px;
+  
+  font-style: italic;
+  font-family: Verdana, sans-serif;
+  font-size: 82%;
+
+}
+
+
+#experimenta {
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+
+}
+
+#experimenta p {
+
+  background-color: aqua;
+  padding: 20px;
+  border: 80px;
+  border-style:solid;
+  border-color: black;
+  border-radius: 50%; 
+
+}
+  
+#experimenta :hover {
+  display: none;
+}
+
 
