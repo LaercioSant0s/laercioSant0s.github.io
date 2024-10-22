@@ -19,7 +19,7 @@
         max-width: 480px;
 
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 150px 1fr 50px;
 
         grid-template-areas: 
                 'header-area nav-area'
@@ -43,50 +43,47 @@
         color: black; 
         background-color: rgba(31, 109, 105, 0.452);
     }
-    
+
+
+    .navegacao, .dropbtn {
+
+        height: 50px;
+        width: 100%;
+        border: none;
+        background-color: rgba(31, 109, 105, 0.452);
+        font-size: 25px;
+        font-weight: bold;
+
+    }
+
+
     nav {
         position: absolute;
         display: block;
         overflow: hidden;
-        background-color: rgba(0, 0, 0, 0.707);
+        background-color: rgba(0, 0, 0, 0.186);
 
     }
     
     nav a {
         float: left;
         font-size: 16px;
-        color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
-    
-    .navegacao {
-        
-        height: 50px;
-        position: relative;
-        background-color: rgba(31, 109, 105, 0.452);
-        
-    }
-
-    .dropbtn {
-        position: absolute;
-        background-color: white;
-        g
-    }
 
     nav a:hover, .navegacao:hover .dropbtn {
-        background-color: red;
+        background-color: dodgerblue;
       }
       
-      .dropdown-content {
+    .dropdown-content {
         display: none;
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
-      }
+    }
       
       .dropdown-content a {
         float: none;
@@ -104,7 +101,16 @@
       .navegacao:hover .dropdown-content {
         display: block;
       }
+
     
+    main {
+        margin-top: 10px;
+        border: 10px;
+        background-color: rgba(31, 109, 105, 0.452);
+        padding: 20px;
+    
+    }
+
     figure {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -116,13 +122,6 @@
         border-color: rgb(198, 158, 39);
         padding: 10px;
         text-align: center;
-    }
-    
-    main {
-        border: 10px;
-        background-color: rgba(31, 109, 105, 0.452);
-        padding: 20px;
-    
     }
     
     #fotografias h3, #video h3, #poema h3 {
