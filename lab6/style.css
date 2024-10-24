@@ -24,10 +24,10 @@ header > figure {
 }
 
 h1 {
+
     /*border-width: 10px;
     
     border-style: solid;*/
-
     padding: 20px;
     
     border-color: grey;
@@ -36,7 +36,7 @@ h1 {
     color: rgb(255, 255, 255); 
 
     margin: 0px;
-    
+
 }
 
 nav {

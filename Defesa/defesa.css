@@ -1,0 +1,130 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+
+    height: 60px;
+    width: 90%;
+    margin: 20px;
+    
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    font-size: 40px;
+    padding-left: 20px;
+
+    background-color: grey;
+
+}
+
+ 
+
+#apresentacao {
+    height: 120px;
+    width: 90%;
+    margin: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    font-size: 40px;
+    padding-left: 20px;
+    padding-top: 5px;
+
+    background-color: white;
+}
+
+h1 {
+    background-color: inherit;
+    font-size: 20px;
+    margin-bottom: 10px;
+} 
+
+#apresentacao p {
+    background-color: inherit;
+    font-size: 15px;
+    
+}
+
+#intro {
+    height: 130px;
+    width: 90%;
+    margin: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    font-size: 40px;
+    padding-left: 20px;
+    padding-top: 5px;
+
+    background-color: white;
+}
+
+h2 {
+    background-color: inherit;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p, ul, li {
+    background-color: inherit;
+    font-size: 15px;
+}
+
+#labs {
+    height: 180px;
+    width: 90%;
+    margin: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    font-size: 40px;
+    padding-left: 20px;
+
+    background-color: white;
+}
+
+h3 {
+    background-color: inherit;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+footer {
+    height: 60px;
+    width: 90%;
+    margin: 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 40px;
+    padding-left: 20px;
+
+    background-color: grey;
+    color: black;
+    font-size: 20px;
+
+}
