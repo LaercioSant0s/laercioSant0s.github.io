@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    
+
+    background: rgb(47,130,131);
+    background: linear-gradient(0deg, rgb(162, 162, 162) 33%, rgb(233, 233, 233) 86%);
+}
+
+ol {
+    margin: 20px;
+}
+
+li {
+    padding: 10px;    
+}
+
+ol li:nth-child(5) {
+    gap: 10px;
+    
+}
