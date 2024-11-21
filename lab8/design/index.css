@@ -20,6 +20,10 @@ li {
 }
 
 ol li:nth-child(5) {
-    gap: 10px;
     
+    
+}
+
+#contadorManual {
+    display: inline;
 }

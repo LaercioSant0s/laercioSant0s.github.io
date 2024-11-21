@@ -1,0 +1,66 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100px;
+    width: 100%;
+
+    display: grid;
+    
+    grid-template-rows: 4fr;
+    
+    grid-template-areas: 
+    'header-area'
+    'main-area'
+    'aside-area'
+    'footer-area';
+
+
+    background-color: antiquewhite;
+}
+
+header {
+    grid-area: header-area;
+    background-color: rgb(108, 237, 237);
+}
+
+main {
+    grid-area: main-area;
+    display: grid;
+    
+    grid-template-areas: 
+        'title' 'title' 'title'
+        'products' 'products' 'products';
+
+    gap: 10px;
+    height: 80px;
+
+    background-color: white;
+}
+
+h2 {
+    grid-area: title;
+    background-color: antiquewhite;
+}
+
+#produtos {
+    grid-area: products;
+    background-color: blue;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+article {
+    
+}
+
+aside {
+    grid-area: aside-area;
+    background-color: violet;
+}
+
+footer {
+    grid-area: footer-area;
+    background-color: brown;
+}

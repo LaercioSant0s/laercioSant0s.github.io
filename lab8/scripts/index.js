@@ -60,7 +60,7 @@ if (!localStorage.getItem('counter')) {
 
 let conta = localStorage.getItem('counter');
 
-let counter = document.querySelectorAll('ol li')[4].querySelector('p');
+let counter = document.querySelectorAll('ol li')[4].querySelector('span');
 counter.textContent = conta;
 
 
