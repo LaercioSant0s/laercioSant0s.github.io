@@ -18,7 +18,6 @@ body {
     'footer-area';
 
 
-    background-color: antiquewhite;
 }
 
 header {
@@ -52,43 +51,73 @@ a {
 }
 
 main {
-    height: 200vh;
-    gap: 10px;
-    
 
     grid-area: main-area;
     display: grid;
     
     grid-template-areas: 
-        'title' 'title' 'title'
-        'products' 'products' 'products';
+        'title'
+        'preProdutos';
 
-    
-
-    background-color: white;
 }
 
 h2 {
     grid-area: title;
-    background-color: antiquewhite;
+    height: 50px;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    
+
+
 }
 
-#produtos {
-    grid-area: products;
+.produtos {
+    grid-area: preProdutos;
+    display: grid;
+    height: fit-content;
+
     background-color: blue;
     grid-template-columns: repeat(3, 1fr);
 }
 
 article {
-    
+    height: 100px;
 }
 
 aside {
     grid-area: aside-area;
-    background-color: violet;
+    display: grid;
+
+    grid-template-areas: 
+        'posProdutos'
+        'selecionados';    
+}
+
+h3 {
+    grid-area: posProdutos;
+    display: flex;
+    justify-content: center;
+
+    height: 50px;
+    padding-top: 20px;
+    background-color: antiquewhite;
+}
+
+.selecionados {
+    grid-area: selecionados;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    background-color: greenyellow;
 }
 
 footer {
     grid-area: footer-area;
-    background-color: brown;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
