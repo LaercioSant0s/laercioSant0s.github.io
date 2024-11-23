@@ -22,11 +22,40 @@ body {
 }
 
 header {
+    height: 80px;
     grid-area: header-area;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 0px;
+    
+    
+    
     background-color: rgb(108, 237, 237);
 }
 
+h1 {
+    grid-area: h1-area;
+
+}
+
+nav {
+    grid-area: nav-area;
+    display: flex;
+    margin: 50px;
+}
+
+a {
+    margin-left: 20px;
+}
+
 main {
+    height: 200vh;
+    gap: 10px;
+    
+
     grid-area: main-area;
     display: grid;
     
@@ -34,8 +63,7 @@ main {
         'title' 'title' 'title'
         'products' 'products' 'products';
 
-    gap: 10px;
-    height: 80px;
+    
 
     background-color: white;
 }
