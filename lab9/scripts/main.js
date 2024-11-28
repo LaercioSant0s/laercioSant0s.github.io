@@ -1,3 +1,7 @@
+if (!localStorage.getItem('produtos-selecionados')) {
+    localStorage.setItem('produtos-selecionados', JSON.stringify([]));
+}
+
 function criarProduto(produto) {
 
     const artigo = document.createElement('article');
@@ -28,7 +32,27 @@ function criarProduto(produto) {
     artigo.appendChild(imagem);
     artigo.appendChild(preco);
     artigo.appendChild(descricao);
-    //append btn
+    artigo.appendChild(button);
+    
+    button.addEventListener('click', ()=> {
+        const objProduto = {
+            "nome": produto.title,
+            "imagem": produto.image,
+            "preco": produto.price,
+            "descricao": produto.description,
+        };
+
+        let produtosSelecionados = localStorage.getItem('produtos-selecionados');
+
+        if (produtosSelecionados) {
+            produtosSelecionados = JSON.parse(produtosSelecionados);
+        } else {
+            produtosSelecionados = [];
+        }
+        
+        produtosSelecionados.push(objProduto);
+        localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
+    })
 
     return artigo;
 
