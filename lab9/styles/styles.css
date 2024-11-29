@@ -153,9 +153,10 @@ h3 {
 .selecionados {
     grid-area: selecionados;
     display: grid;
-
+    gap: 40px;
+    margin: 40px;
     grid-template-columns: repeat(3, 1fr);
-    background-color: greenyellow;
+    background-color: inherit;
 }
 
 footer {
