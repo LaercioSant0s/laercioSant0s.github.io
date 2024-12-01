@@ -48,8 +48,30 @@ nav {
     margin: 50px;
 }
 
-a {
-    margin-left: 20px;
+nav > a {
+
+    text-decoration: none;
+    transform: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav > a:link {
+    color: rgb(61, 106, 101)
+}
+
+nav > a:visited {
+    color: rgb(166, 155, 155)
+}
+
+nav > a:hover {
+    color:black;
+    background-color: rgb(189, 189, 189);
+    transition: 0.8s;
+}
+
+nav > a:active {
+    background-color: salmon;
 }
 
 main {
@@ -110,8 +132,8 @@ article {
 
 .imgProduto {
     
-    width: 20vw;
-    height: 100%;
+    width: 100%;
+    height: 400px;
 
 }
 
@@ -131,6 +153,10 @@ article {
     background: linear-gradient(0deg, rgba(182,182,182,1) 0%, rgba(188,188,188,1) 49%, rgba(227,227,227,1) 97%);
 }
 
+button {
+    margin-top: 20px;
+}
+
 aside {
     grid-area: aside-area;
     display: grid;
@@ -144,7 +170,7 @@ h3 {
     grid-area: posProdutos;
     display: flex;
     justify-content: center;
-
+    font-size: 24px;
     height: 50px;
     padding-top: 20px;
     background-color: antiquewhite;
@@ -154,9 +180,19 @@ h3 {
     grid-area: selecionados;
     display: grid;
     gap: 40px;
-    margin: 40px;
+    padding: 40px;
     grid-template-columns: repeat(3, 1fr);
     background-color: inherit;
+    background-color: antiquewhite;
+}
+
+#total {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 40px;
+    background-color: antiquewhite;
 }
 
 footer {

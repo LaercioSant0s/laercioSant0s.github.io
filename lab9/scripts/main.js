@@ -1,3 +1,5 @@
+import { produtos } from "./produtos.js";
+
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
 }
@@ -36,15 +38,13 @@ function criarProduto(produto) {
     
     button.addEventListener('click', ()=> {
         
-        const objProduto = JSON.stringify(produto);
-
-        let produtosSelecionados; 
-        
-        produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || []; 
-        
-        produtosSelecionados.push(objProduto);
+        let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || []; 
+        produtosSelecionados.push(produto);
         localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
    
+        atualizarCesto();
+        atualizarPreco();
+
     });
 
     return artigo;
@@ -64,40 +64,24 @@ function carregarProdutos(produtos) {
 
 }
 
-function removerProduto(produto) {
+function removerArtigoHTML(produto) {
 
-    const selecionados = document.querySelector('.selecionados');
-    let produtos = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
-    let newList = [];
-    let toRemove;
+    const cesto = document.querySelector('.selecionados');
 
-    produtos.forEach(artigo => {
+    const artigos = cesto.querySelectorAll('article');
 
-        if (artigo.title !== produto.title && artigo.description !== produto.description) {
-            newList.push(artigo);
-        } else {
-            toRemove = artigo;
+    let int = 0;
+
+    artigos.forEach(artigo => {
+
+        const nomeProduto = artigo.querySelector('.nomeProduto');
+
+        if (int < 1 && nomeProduto.textContent === produto.title) {
+            cesto.removeChild(artigo);
+            int = 1;
         }
-    
-    });
-
-    localStorage.setItem('produtos-selecionados', JSON.stringify(newList));
-
-
-    selecionados.querySelectorAll('article').forEach(article => {
-
-        const title = article.querySelector('.nomeProduto');
-        const description = article.querySelectorAll('.descricaoProduto');
-
-        if (title && description && title.textContent == toRemove.title && description.textContent == toRemove.description) {
-            selecionados.removeChild(article);
-            return;
-        } 
 
     });
-
-
-
 
 }
 
@@ -134,22 +118,62 @@ function criarProdutoCesto(produto) {
     artigo.appendChild(button);
     
     button.addEventListener('click', ()=> {
-        removerProduto(produto);
-    })
+
+        removerArtigoHTML(produto);
+
+        let selecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
+
+        const index = selecionados.findIndex(artigo => artigo.title === produto.title);
+
+        if (index != -1) {
+            selecionados.splice(index, 1);
+        }
+
+        localStorage.setItem('produtos-selecionados', JSON.stringify(selecionados));
+
+        atualizarPreco();
+
+    });
 
     return artigo;
 
 }
 
-function atualizarCesto(produto) {
+function atualizarCesto() {
 
-    const cesto = document.querySelector('.selecionados');
-    const artigo = criarProdutoCesto();
-    cesto.appendChild(artigo);
+    const selecionados = document.querySelector('.selecionados');
+
+    while (selecionados.firstChild) {
+        selecionados.removeChild(selecionados.firstChild);
+    }
+
+    const cesto = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
+    let artigo;
+
+    cesto.forEach(produto => {
+        artigo = criarProdutoCesto(produto);
+        selecionados.appendChild(artigo);
+    });
         
 }
 
+function atualizarPreco() {
 
-document.addEventListener('DOMContentLoaded', () => {
+    const idTotal = document.querySelector('#total');
+    const cesto = JSON.parse(localStorage.getItem('produtos-selecionados'));
+
+    let total = 0;
+    
+    cesto.forEach(produto => {
+        total += parseFloat(produto.price);
+    })
+
+    idTotal.textContent = `Custo total: ${total} €`;
+
+}
+
+document.addEventListener('DOMContentLoaded', () => {    
     carregarProdutos(produtos); // Chama a função com a variável produtos
+    atualizarCesto();
+    atualizarPreco();
 });
