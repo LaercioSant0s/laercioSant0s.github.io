@@ -168,6 +168,8 @@ function atualizarPreco() {
         total += parseFloat(produto.price);
     })
 
+    total = total.toFixed(2);
+
     idTotal.textContent = `Custo total: ${total} €`;
 
 }
