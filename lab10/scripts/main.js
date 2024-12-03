@@ -266,6 +266,27 @@ document.querySelector('#ordenar').addEventListener('change', (event) => {
     console.log("Produtos ordenados:", produtosArray.map(prod => extrairPreco(prod)));
 });
 
+document.querySelector('#resultadoProcura').addEventListener('input', (texto) => {
+
+    const userInput = texto.target.value;
+    const produtos = document.querySelector('.produtos').querySelectorAll('article');
+    
+    // Selecionar todos os articles dentro da seção .produtos
+    
+    produtos.forEach(produto => { 
+        const tituloElemento = produto.querySelector('.nomeProduto'); 
+        
+        if (tituloElemento) { 
+            const titulo = tituloElemento.textContent; 
+            if (titulo.includes(userInput) || userInput === "") { 
+                produto.style.display = 'block'; // Mostrar o produto 
+            } else { 
+                produto.style.display = 'none'; // Esconder o produto 
+            } 
+        } 
+    });
+
+});
 
 document.addEventListener('DOMContentLoaded', () => {    
     
