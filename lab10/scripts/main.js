@@ -1,3 +1,7 @@
+if (!localStorage.getItem('produtos-selecionados')) {
+    localStorage.setItem('produtos-selecionados', JSON.stringify([]));
+}
+
 async function fetchCategorias() {
     
     const resposta = await fetch("https://deisishop.pythonanywhere.com/categories");
@@ -288,10 +292,68 @@ document.querySelector('#resultadoProcura').addEventListener('input', (texto) =>
 
 });
 
+async function pedidoCompra(dados) {
+
+    const pedido = await fetch('https://deisishop.pythonanywhere.com/buy', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(dados)
+    });
+
+    const resposta = await pedido.json();
+
+    return resposta;
+    
+}
+
+document.querySelector('#comprar').addEventListener('click', async ()=> {
+
+    const products = JSON.parse(localStorage.getItem('produtos-selecionados')).map(produto => `${produto.id}`);
+    const checkbox = document.querySelector('#estudante').checked;
+    const desconto = document.querySelector('#desconto').value;
+    let resposta;
+
+    const data = {
+        "products": products,
+        "student": checkbox,
+        "coupon": desconto
+    }
+      
+    resposta = await pedidoCompra(data);
+
+    const preco = document.createElement('p');
+    preco.textContent = `Custo total: ${resposta.totalCost}`;
+    
+    const referencia = document.createElement('p');
+    referencia.textContent = `Referência de pagamento: ${resposta.reference}`;
+
+    const pagamento = document.querySelector('#checkout');
+    
+    pagamento.querySelectorAll('*').forEach(element => element.setAttribute('hidden', ''));
+    
+    pagamento.appendChild(preco);
+    pagamento.appendChild(referencia);
+
+});
+
 document.addEventListener('DOMContentLoaded', () => {    
     
+    document.querySelector('#checkout').querySelectorAll('*').forEach(element => element.removeAttribute('hidden'));
+    const checkout = document.querySelector('#checkout');
+    const elementos = Array.from(checkout.querySelectorAll('*'));
+
+    // Filtrar elementos que têm o atributo 'id'
+    const elementosComId = elementos.filter(elemento => elemento.hasAttribute('id'));
+
+    // Remover esses elementos do DOM
+    elementosComId.forEach(elemento => elemento.remove());
+
     menuFiltrar();
     carregarProdutos();
+    atualizarCesto();
+    atualizarPreco();
 
 });
 
