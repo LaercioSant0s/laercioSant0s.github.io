@@ -324,10 +324,15 @@ document.querySelector('#comprar').addEventListener('click', async ()=> {
     resposta = await pedidoCompra(data);
 
     const preco = document.createElement('p');
-    preco.textContent = `Custo total: ${resposta.totalCost}`;
-    
+    preco.textContent = `Custo total: ${resposta.totalCost} €`;
+    preco.style.fontSize = '24px';
+    preco.style.fontWeight = 'bold';
+
     const referencia = document.createElement('p');
     referencia.textContent = `Referência de pagamento: ${resposta.reference}`;
+    referencia.style.fontSize = '20px';
+    referencia.style.fontWeight = 'bold';
+    referencia.style.marginBottom = '20px';
 
     const pagamento = document.querySelector('#checkout');
     
@@ -345,10 +350,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const elementos = Array.from(checkout.querySelectorAll('*'));
 
     // Filtrar elementos que têm o atributo 'id'
-    const elementosComId = elementos.filter(elemento => elemento.hasAttribute('id'));
+    const elementosComId = elementos.filter(elemento => {
+
+        const sectionChild = elemento.querySelector('input') || elemento.querySelector('button');
+
+        if (sectionChild) {
+            return !sectionChild.hasAttribute('id')
+        }
+
+    });
 
     // Remover esses elementos do DOM
-    elementosComId.forEach(elemento => elemento.remove());
+    if (elementosComId) {
+        elementosComId.forEach(elemento => elemento.remove());
+    }
 
     menuFiltrar();
     carregarProdutos();
