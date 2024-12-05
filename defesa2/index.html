@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laércio´s Store</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+    
+<body>
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            <a href="#seccaoProdutos">Produtos</a>
+            <a href="#seccaoSelecionados">Cesto</a>
+        </nav>
+    </header>
+
+    <main id="seccaoProdutos">
+        
+        <h2>Selecione os seus Produtos</h2>
+
+        <section id="pesquisa">
+
+            <section>
+                <label for="filtros">Filtrar</label>
+                <select name="filtros" id="filtrar">
+                    <option value="all" disabled selected>Todas as categorias</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="ordenacao">Ordenar</label>
+                <select name="ordenacao" id="ordenar">
+                    <option value="" disabled selected>Ordenar pelo rating</option>
+                    <option value="decrescente">Rating Decrescente</option>
+                    <option value="crescente">Rating Crescente</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="procurar" id="procura">Procurar</label>
+                <input type="" value="" id="resultadoProcura">
+            </section>
+            
+            <section>
+                <button id="allAll">Adicionar todos</button>
+            </section>
+
+        </section>
+
+        <section class="produtos">
+            <!--
+            <article>
+                <p class="categoria" display="none">camisa</p>
+                <p class="nomeProduto">Tshirt</p>
+                <img src="" alt="" class="imgProduto">
+                <p class="precoProduto">Custo total: 22.3 €</p>
+                <p class="descricaoProduto">blablabla</p>
+                <button type="button">+ Adicionar ao cesto</button>
+            </article>
+            <article>
+                <p class="categoria" display="none">camisa</p>
+                <p class="nomeProduto">Tshirt</p>
+                <img src="" alt="" class="imgProduto">
+                <p class="precoProduto">Custo total: 22.3 €</p>
+                <p class="descricaoProduto">blablabla</p>
+                <button type="button">+ Adicionar ao cesto</button>
+            </article>
+            <article>
+                <p class="categoria" display="none">camisa</p>
+                <p class="nomeProduto">Tshirt</p>
+                <img src="" alt="" class="imgProduto">
+                <p class="precoProduto">Custo total: 22.3 €</p>
+                <p class="descricaoProduto">blablabla</p>
+                <button type="button">+ Adicionar ao cesto</button>
+            </article>
+            -->
+        </section>
+    </main>
+
+    <aside id="seccaoSelecionados">
+        <h3>Produtos Selecionados</h3>
+
+        <section class="selecionados">
+            <!--
+            <article>
+                <p class="nomeProduto">Tshirt</p>
+                <img src="" alt="" class="imgProduto">
+                <p class="precoProduto">Custo total: 22.3</p>
+                <p class="descricaoProduto">blablabla</p>
+                <button type="button">+ Adicionar ao cesto</button>
+            </article>
+            <article>
+                <p class="nomeProduto">Jeans</p>
+                <img src="" alt="" class="imgProduto">
+                <p class="precoProduto">Custo total: 22.3</p>
+                <p class="descricaoProduto">blablabla</p>
+                <button type="button">+ Adicionar ao cesto</button>
+            </article>
+            <article>
+                <p class="nomeProduto">UnderWears</p>
+                <img src="" alt="" class="imgProduto">
+                <p class="precoProduto">Custo total: 22.3</p>
+                <p class="descricaoProduto">blablabla</p>
+                <button type="button">+ Adicionar ao cesto</button>
+            </article>
+            -->
+        </section>
+
+        <section id="checkout">
+            <p id="total"></p>
+
+            <section>
+                <label for="estudante">És estudante do DEISI?</label>
+                <input type="checkbox" id="estudante">
+            </section>
+
+            <section>
+                <label for="desconto">Cupão de desconto:</label>
+                <input type="" value="" id="desconto">
+            </section>
+            
+            <button type="button" id="comprar">Comprar</button>
+
+        </section>
+
+    </aside>
+
+    <footer>2024</footer>
+
+</body>
+</html>
