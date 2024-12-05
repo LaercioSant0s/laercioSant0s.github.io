@@ -391,17 +391,14 @@ function adicionarTodosProdutos() {
         
         
 
-        removerArtigoHTML(produto);
+        const allHTML = document.querySelector('.selecionados');
 
-        let selecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
-
-        const index = selecionados.findIndex(artigo => artigo.title === produto.title);
-
-        if (index != -1) {
-            selecionados.splice(index, 1);
+        while (allHTML.firstChild) {
+            allHTML.removeChild(allHTML)
         }
+        
 
-        localStorage.setItem('produtos-selecionados', JSON.stringify(selecionados));
+        allHTML.appendChild(artigo);
 
         atualizarPreco();
 
@@ -410,6 +407,12 @@ function adicionarTodosProdutos() {
     return artigo;
 
 }
+
+
+document.querySelector('#addAll').addEventListener('click', () => {
+    adicionarTodosProdutos();
+})
+
 
 document.addEventListener('DOMContentLoaded', async() => {    
     
