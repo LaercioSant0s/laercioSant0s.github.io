@@ -394,7 +394,7 @@ function adicionarTodosProdutos() {
         const allHTML = document.querySelector('.selecionados');
 
         while (allHTML.firstChild) {
-            allHTML.removeChild(allHTML)
+            allHTML.removeChild(allHTML.firstChild)
         }
         
 
