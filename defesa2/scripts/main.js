@@ -392,24 +392,24 @@ function adicionarTodosProdutos() {
         
 
         const allHTML = document.querySelector('.selecionados');
-
-        while (allHTML.firstChild) {
-            allHTML.removeChild(allHTML.firstChild)
-        }
         
-
         allHTML.appendChild(artigo);
 
         atualizarPreco();
 
     });
 
-    return artigo;
-
 }
 
 
 document.querySelector('#addAll').addEventListener('click', () => {
+    
+    const allHTML = document.querySelector('.selecionados');
+
+    while (allHTML.firstChild) {
+        allHTML.removeChild(allHTML.firstChild);
+    }
+
     adicionarTodosProdutos();
 })
 
